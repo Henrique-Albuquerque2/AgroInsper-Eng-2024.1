@@ -1,0 +1,91 @@
+/* cliente_lobby.css */
+.App {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.App-header {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px; /* Ajuste conforme o tamanho do seu logotipo */
+}
+
+.login-area {
+    display: flex;
+    align-items: center;
+}
+
+.login-button {
+    background-color: #4CAF50; /* Cor verde, ajuste conforme necessário */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.main-content {
+    height: 60vh; /* Ajuste a altura conforme necessário */
+    color: white;
+    background-image: url('//fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+    padding: 20px;
+}
+
+.title-container h1 {
+    margin: 0;
+}
+
+.bottom-nav {
+    background-color: #333; /* Cor de fundo da barra de navegação */
+    color: white;
+    padding: 1em 0;
+}
+
+.bottom-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.bottom-nav li {
+    display: inline;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.bottom-nav li:hover {
+    text-decoration: underline;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
