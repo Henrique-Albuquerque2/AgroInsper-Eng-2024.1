@@ -8,11 +8,14 @@ function Lobby() {
             {/* Header com logotipo e área de login */}
             <header className="App-header">
                 <div className="logo">
-                    {/* Substitua 'logo.svg' pelo seu logotipo */}
                     <img src= "/logo_apenas.png"  alt="SARdrones Logo" />
+                    <img src= "/logoescrito.png"  alt="Logo escrito" />
+                    <p className='area-cliente'>Área do Cliente</p>
                 </div>
                 <div className="login-area">
                     {/* Ícone de usuário para a área de login */}
+                    <img src='' alt='Hamburger'/>
+                    <img src='' alt='Perfil'/>
                     <button className="login-button">Área do Cliente</button>
                 </div>
             </header>

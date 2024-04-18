@@ -21,7 +21,7 @@
     max-height: 50px; /* Ajuste conforme o tamanho do seu logotipo */
 }
 
-.login-area {
+.area-login {
     display: flex;
     align-items: center;
 }
