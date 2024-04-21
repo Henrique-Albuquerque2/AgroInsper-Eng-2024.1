@@ -18,14 +18,29 @@
   }
   
 .menu.open {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     right: 8rem;
     top: 6vh;
     background-color: black;
+    width: 20vh;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+    border-radius: .5em;
+    z-index: 100;
+    height: 25vh;
+}
+
+.menu.open a {
     text-decoration: none;
-    color: inherit;
-    height: 20vh;
+    padding: 1vh;
+    color: white;
+}
+
+.menu.open a:hover {
+    color: #ADC737;
+    text-decoration: underline;
 }
 
 .logo {
@@ -113,12 +128,12 @@ main {
     max-height: 10em;
 }
 
-.trapezoid div {
+.div1 {
     transform: skew(20deg);
     margin: 1em;
 }
 
-.trapezoid ul {
+.ul {
     transform: skew(20deg);
     list-style-type: none;
     align-self: self-start;
@@ -128,4 +143,8 @@ main {
     font-size: 1.5rem;
     color: #ADC737;
     text-decoration: underline;
+}
+
+.trapezoid a {
+    color: #ADC737;
 }

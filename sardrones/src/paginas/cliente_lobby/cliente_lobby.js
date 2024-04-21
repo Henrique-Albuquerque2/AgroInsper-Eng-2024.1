@@ -2,7 +2,8 @@ import React from 'react';
 import './cliente_lobby.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import Voos from '../cliente_voos/cliente_voos';
-// import Analises from '../cliente_analises/cliente_analises'
+import Analises from '../cliente_analises/cliente_analises'
+import Perfil from "../perfil/perfil"
 
 function Lobby() {
 
@@ -31,20 +32,23 @@ function Lobby() {
                         </div>
 
                         <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-                            {/* <Link to="/" onClick={toggleMenu}>Lobby</Link> */}
-                            <Link to="/voos" onClick={toggleMenu}>Voos</Link>
-                            {/* <Link to="/analises" onClick={toggleMenu}>Análises</Link> */}
+                            <Link to="/voos" onClick={toggleMenu}>Seus Voos</Link>
+                            <Link to="/analises" onClick={toggleMenu}>Análises</Link>
+                            <Link to="/perfil" onClick={toggleMenu}>Perfil</Link>
                         </div>
 
                     </nav>
 
+                    <Link to="/perfil">
+                        <img src='/perfil.png' alt='Perfil' />
+                    </Link>
+
                     <Routes>
-                        {/* <Route path="/" element={<Lobby />} /> */}
+                        <Route path="/perfil" element={<Perfil />} />
                         <Route path="/voos" element={<Voos />} />
-                        {/* <Route path="/analises" element={<Analises />} /> */}
+                        <Route path="/analises" element={<Analises />} />
                     </Routes>
 
-                    <img src='/perfil.png' alt='Perfil' />
 
                 </div>
 
@@ -54,18 +58,18 @@ function Lobby() {
 
                 <div className="trapezoid">
 
-                    <div>
+                    <div className='div1'>
                         <img src='/logo_apenas.png' alt='logo main'/>
                         <h1>SARDRONES</h1>
                     </div>
 
                     <p>QUALIDADE ACIMA DE TUDO</p>
                     
-                    <ul>
-                        <li>Seus Voos</li>
-                        <li>Análises</li>
-                    </ul>
-
+                    <div className='ul'>
+                        <Link to="/voos">Seus Voos</Link>
+                        <Link to="/analises">Análises</Link>
+                    </div>               
+                
                 </div>
 
             </main>
