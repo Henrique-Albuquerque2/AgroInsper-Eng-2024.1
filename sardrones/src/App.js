@@ -10,6 +10,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Lobby />} />
+          {/* <Route path="/" element={<Voos />} /> */}
           {/* Adicione mais rotas conforme necessário */}
         </Routes>
       </div>

@@ -1,41 +1,79 @@
 import React from 'react';
 import './cliente_lobby.css';
-import { Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
+import Voos from '../cliente_voos/cliente_voos';
+import Analises from '../cliente_analises/cliente_analises'
+import Perfil from "../perfil/perfil"
 
 function Lobby() {
+
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <div className="Lobby">
-            {/* Header com logotipo e área de login */}
+
             <header className="App-header">
+
                 <div className="logo">
-                    {/* Substitua 'logo.svg' pelo seu logotipo */}
-                    <img src= "/logo_apenas.png"  alt="SARdrones Logo" />
+                    <img src= "/logo_apenas.png"  alt="SARdrones Logo"  className='logo_img1'/>
+                    <img src= "/logoescrito.png"  alt="Logo escrito"className='logo_img2' />
+                    <p>Área do Cliente</p>
                 </div>
-                <div className="login-area">
-                    {/* Ícone de usuário para a área de login */}
-                    <button className="login-button">Área do Cliente</button>
+
+                <div className="area-login">
+                    <nav>
+
+                        <div onClick={toggleMenu}>
+                            <img src='/hamburger.png' alt='Hamburger'/>
+                        </div>
+
+                        <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
+                            <Link to="/voos" onClick={toggleMenu}>Seus Voos</Link>
+                            <Link to="/analises" onClick={toggleMenu}>Análises</Link>
+                            <Link to="/perfil" onClick={toggleMenu}>Perfil</Link>
+                        </div>
+
+                    </nav>
+
+                    <Link to="/perfil">
+                        <img src='/perfil.png' alt='Perfil' />
+                    </Link>
+
+                    <Routes>
+                        <Route path="/perfil" element={<Perfil />} />
+                        <Route path="/voos" element={<Voos />} />
+                        <Route path="/analises" element={<Analises />} />
+                    </Routes>
+
+
                 </div>
+
             </header>
 
-            {/* Seção principal com imagem de fundo e título */}
-            <main className="main-content" style={{ backgroundImage: `url("/fundo.jpg")` }}>
-                <div className="title-container">
-                    <h1>QUALIDADE ACIMA DE TUDO</h1>
+            <main className="lobby-container" style={{ backgroundImage: `url("/fundo.jpg")` }}>
+
+                <div className="trapezoid">
+
+                    <div className='div1'>
+                        <img src='/logo_apenas.png' alt='logo main'/>
+                        <h1>SARDRONES</h1>
+                    </div>
+
+                    <p>QUALIDADE ACIMA DE TUDO</p>
+                    
+                    <div className='ul'>
+                        <Link to="/voos">Seus Voos</Link>
+                        <Link to="/analises">Análises</Link>
+                    </div>               
+                
                 </div>
+
             </main>
 
-            {/* Navegação inferior */}
-            <nav className="bottom-nav">
-                <ul>
-                    <li>Seus Voos</li>
-                    <li>Análises</li>
-                </ul>
-            </nav>
-
-            {/* Menu hamburguer (adicione funcionalidade conforme necessário) */}
-            <div className="hamburger-menu">
-                <span>Menu</span>
-            </div>
         </div>
     );
 }
