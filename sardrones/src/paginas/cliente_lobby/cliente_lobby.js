@@ -28,7 +28,7 @@ function Lobby() {
                     <p>QUALIDADE ACIMA DE TUDO</p>
                     
                     <div className='ul'>
-                        <Link to="/cliente_voos">Seus Voos</Link>
+                        <Link to="/cliente_voos">Meus Voos</Link>
                         <Link to="/cliente_analises">Análises</Link>
                     </div>               
                 
