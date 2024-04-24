@@ -1,46 +1,93 @@
-// import React from 'react';
-// import '../cliente_lobby/cliente_lobby.css';
-// import { Routes, Route, Link } from 'react-router-dom';
-// import Lobby from '../cliente_lobby/cliente_lobby';
+import { Routes, Route, Link } from 'react-router-dom';
+import Lobby from '../cliente_lobby/cliente_lobby';
+import React, { useState, useEffect, useMemo } from 'react';
+import './cliente_voos.css'; // Adicione seus estilos específicos
 
-// function Voos() {
+import { useTable } from 'react-table';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
-//     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+function MeusVoos() {
+    const [voos, setVoos] = useState([]);
+    const [filtros, setFiltros] = useState({
+        fazenda: '',
+        identificacao: '',
+        data: null,
+        validacao: ''
+    });
 
-//     const toggleMenu = () => {
-//       setIsMenuOpen(!isMenuOpen);
-//     };
+    // Função para buscar os voos com os filtros aplicados
+    const buscarVoos = () => {
+        // Simulando uma chamada de API
+        console.log("Buscando voos com filtros:", filtros);
+        // Suponha que setVoos é atualizado aqui com os dados retornados da API
+    };
 
-//     return (
-//         <div>
-//             <header className="App-header">
-//                 <div className="logo">
-//                     <img src= "/logo_apenas.png"  alt="SARdrones Logo"  className='logo_img1'/>
-//                     <img src= "/logoescrito.png"  alt="Logo escrito"className='logo_img2' />
-//                     <p>Área do Cliente</p>
-//                 </div>
-//                 <div className="area-login">
-//                     <nav>
-//                         <div onClick={toggleMenu}>
-//                             <img src='/hamburger.png' alt='Hamburger'/>
-//                             {/* <div></div>
-//                             <div></div>
-//                             <div></div> */}
-//                         </div>
-//                         <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-//                             <Link to="/lobby" onClick={toggleMenu}>Lobby</Link>
-//                             {/* <Link to="/about" onClick={toggleMenu}>About</Link>
-//                             <Link to="/contact" onClick={toggleMenu}>Contact</Link> */}
-//                         </div>
-//                     </nav>
-//                     <Routes>
-//                         <Route path="/lobby" exact component={Lobby} />
-//                     </Routes>
-//                     <img src='/perfil.png' alt='Perfil' />
-//                 </div>
-//             </header>
-//         </div>
-//     );
-// }
+    const dataColumns = useMemo(() => [
+        { Header: 'Fazenda', accessor: 'fazenda' },
+        { Header: 'Identificação', accessor: 'identificacao' },
+        { Header: 'Data', accessor: 'data' },
+        { Header: 'Validação', accessor: 'validacao' }
+    ], []);
 
-// export default Voos;
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns: dataColumns, data: voos });
+
+    return (
+        <div className="MeusVoos">
+            <div className="filtros">
+                <input
+                    type="text"
+                    placeholder="Fazenda"
+                    value={filtros.fazenda}
+                    onChange={e => setFiltros({...filtros, fazenda: e.target.value})}
+                />
+                <input
+                    type="text"
+                    placeholder="Identificação"
+                    value={filtros.identificacao}
+                    onChange={e => setFiltros({...filtros, identificacao: e.target.value})}
+                />
+                <DatePicker
+                    selected={filtros.data}
+                    onChange={date => setFiltros({...filtros, data: date})}
+                    dateFormat="dd/MM/yyyy"
+                    placeholderText="Data"
+                />
+                <input
+                    type="text"
+                    placeholder="Validação"
+                    value={filtros.validacao}
+                    onChange={e => setFiltros({...filtros, validacao: e.target.value})}
+                />
+                <button onClick={buscarVoos}>Buscar</button>
+            </div>
+            <div className="tabela-voos">
+                <table {...getTableProps()}>
+                    <thead>
+                        {headerGroups.map(headerGroup => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map(column => (
+                                    <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                ))}
+                            </tr>
+                        ))}
+                    </thead>
+                    <tbody {...getTableBodyProps()}>
+                        {rows.map(row => {
+                            prepareRow(row);
+                            return (
+                                <tr {...row.getRowProps()}>
+                                    {row.cells.map(cell => (
+                                        <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                    ))}
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
+}
+
+export default MeusVoos;

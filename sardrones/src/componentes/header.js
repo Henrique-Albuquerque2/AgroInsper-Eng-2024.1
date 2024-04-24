@@ -19,7 +19,7 @@ function Header() {
             case '/':
                 return 'Área do Cliente';
             case '/cliente_voos':
-                return 'Seus Voos';
+                return 'Meus Voos';
             case '/cliente_analises':
                 return 'Análises';
             case '/perfil':
@@ -48,7 +48,7 @@ function Header() {
                     </div>
                     <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
                         <Link to="/" onClick={toggleMenu}>Área do Cliente</Link>
-                        <Link to="/cliente_voos" onClick={toggleMenu}>Seus Voos</Link>
+                        <Link to="/cliente_voos" onClick={toggleMenu}>Meus Voos</Link>
                         <Link to="/cliente_analises" onClick={toggleMenu}>Análises</Link>
                         <Link to="/perfil" onClick={toggleMenu}>Perfil</Link>
                         <Link to="/logistica" onClick={toggleMenu}>Logística</Link>
