@@ -1,9 +1,7 @@
 import React from 'react';
 import './cliente_lobby.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import Voos from '../cliente_voos/cliente_voos';
-import Analises from '../cliente_analises/cliente_analises'
-import Perfil from "../perfil/perfil"
+import { Link } from 'react-router-dom';
+
 
 function Lobby() {
 
@@ -42,13 +40,6 @@ function Lobby() {
                     <Link to="/perfil">
                         <img src='/perfil.png' alt='Perfil' />
                     </Link>
-
-                    <Routes>
-                        <Route path="/perfil" element={<Perfil />} />
-                        <Route path="/voos" element={<Voos />} />
-                        <Route path="/analises" element={<Analises />} />
-                    </Routes>
-
 
                 </div>
 
