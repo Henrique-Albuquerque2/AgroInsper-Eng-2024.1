@@ -1,49 +1,20 @@
 import React from 'react';
 import './cliente_lobby.css';
-import { Link } from 'react-router-dom';
-
+import { Routes, Route, Link } from 'react-router-dom';
+// import Voos from '../cliente_voos/cliente_voos';
+// import Analises from '../cliente_analises/cliente_analises'
+// import Perfil from "../perfil/perfil"
 
 function Lobby() {
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen(!isMenuOpen);
     };
 
     return (
         <div className="Lobby">
-
-            <header className="App-header">
-
-                <div className="logo">
-                    <img src= "/logo_apenas.png"  alt="SARdrones Logo"  className='logo_img1'/>
-                    <img src= "/logoescrito.png"  alt="Logo escrito"className='logo_img2' />
-                    <p>Área do Cliente</p>
-                </div>
-
-                <div className="area-login">
-                    <nav>
-
-                        <div onClick={toggleMenu}>
-                            <img src='/hamburger.png' alt='Hamburger'/>
-                        </div>
-
-                        <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-                            <Link to="/voos" onClick={toggleMenu}>Seus Voos</Link>
-                            <Link to="/analises" onClick={toggleMenu}>Análises</Link>
-                            <Link to="/perfil" onClick={toggleMenu}>Perfil</Link>
-                        </div>
-
-                    </nav>
-
-                    <Link to="/perfil">
-                        <img src='/perfil.png' alt='Perfil' />
-                    </Link>
-
-                </div>
-
-            </header>
 
             <main className="lobby-container" style={{ backgroundImage: `url("/fundo.jpg")` }}>
 
@@ -57,8 +28,8 @@ function Lobby() {
                     <p>QUALIDADE ACIMA DE TUDO</p>
                     
                     <div className='ul'>
-                        <Link to="/voos">Seus Voos</Link>
-                        <Link to="/analises">Análises</Link>
+                        <Link to="/cliente_voos">Meus Voos</Link>
+                        <Link to="/cliente_analises">Análises</Link>
                     </div>               
                 
                 </div>
