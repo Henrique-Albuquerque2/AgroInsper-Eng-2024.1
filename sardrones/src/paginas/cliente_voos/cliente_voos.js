@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import Lobby from '../cliente_lobby/cliente_lobby';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import './cliente_voos.css'; // Adicione seus estilos específicos
 
 import { useTable } from 'react-table';

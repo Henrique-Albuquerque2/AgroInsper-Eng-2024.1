@@ -1,17 +1,14 @@
 import React from 'react';
 import './cliente_lobby.css';
-import { Routes, Route, Link } from 'react-router-dom';
-// import Voos from '../cliente_voos/cliente_voos';
-// import Analises from '../cliente_analises/cliente_analises'
-// import Perfil from "../perfil/perfil"
+import { Link } from 'react-router-dom';
 
 function Lobby() {
 
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    // const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    // const toggleMenu = () => {
+    //     setIsMenuOpen(!isMenuOpen);
+    // };
 
     return (
         <div className="Lobby">
