@@ -1,0 +1,8 @@
+/* logistica.css ou o arquivo CSS global */
+.info-panels {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente se houver altura suficiente no contêiner */
+    height: 100vh; /* Torna o contêiner do mesmo tamanho que a altura da janela */
+    flex-wrap: wrap; /* Permite que os itens se ajustem conforme a largura da tela */
+}
