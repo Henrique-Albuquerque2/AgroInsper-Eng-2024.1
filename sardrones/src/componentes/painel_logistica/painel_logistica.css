@@ -1,14 +1,17 @@
 /* InfoPanel.css */
 .info-panel {
+    flex: 1 0 20%; /* Cada painel tentará ocupar 20% do espaço disponível */
+    margin: 10px; /* Espaçamento entre os painéis */
+    padding: 1px;
+    box-sizing: border-box;
     width: 200px; /* Definir uma largura fixa */
     height: 200px; /* Altura igual à largura para formar um quadrado */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border: 1px solid #ddd;
     border-radius: 8px;
-    margin: 16px; /* Espaçamento para não colar um no outro */
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -18,6 +21,8 @@
 }
 
 .info-panel-actions button {
+    display: flex;
+    flex-direction: column;
     padding: 8px 12px;
     margin-top: 8px;
     background-color: #5F903F;
