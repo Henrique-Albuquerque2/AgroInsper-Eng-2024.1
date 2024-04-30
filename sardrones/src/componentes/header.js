@@ -26,6 +26,14 @@ function Header() {
                 return 'Perfil';
             case '/logistica':
                 return 'Logística';
+            case '/logistica_drones':
+                return 'Drones';
+            case '/logistica_baterias':
+                return 'Baterias';
+            case '/logistica_dispensers':
+                return 'Dispensers';
+            case '/logistica_operadores':
+                return 'Operadores';
             default:
                 return 'Página';
         }

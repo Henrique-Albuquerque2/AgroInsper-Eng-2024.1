@@ -8,16 +8,16 @@ function NavegacaoLogistica() {
             <NavLink activeClassName="active" to="/logistica">
                 Geral
             </NavLink>
-            <NavLink activeClassName="active" to="/logistica/logistica_drones">
+            <NavLink activeClassName="active" to="/logistica_drones">
                 Drones
             </NavLink>
-            <NavLink activeClassName="active" to="/logistica/logistica_baterias">
+            <NavLink activeClassName="active" to="/logistica_baterias">
                 Baterias
             </NavLink>
-            <NavLink activeClassName="active" to="/logistica/logistica_dispensers">
+            <NavLink activeClassName="active" to="/logistica_dispensers">
                 Dispensers
             </NavLink>
-            <NavLink activeClassName="active" to="/logistica/logistica_operadores">
+            <NavLink activeClassName="active" to="/logistica_operadores">
                 Operadores
             </NavLink>
         </div>
