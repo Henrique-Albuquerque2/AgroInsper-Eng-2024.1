@@ -6,5 +6,5 @@
     height: 100%; /* Torna o contêiner do mesmo tamanho que a altura da janela */
     flex-wrap: wrap; /* Permite que os itens se ajustem conforme a largura da tela */
     padding: 0 10px; /* Espaçamento lateral para não tocar nas bordas da tela */
-    margin-top: 10%;
+    margin-top: 5%;
 }

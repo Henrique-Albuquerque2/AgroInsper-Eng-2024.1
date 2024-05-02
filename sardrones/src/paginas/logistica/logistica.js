@@ -7,10 +7,10 @@ import './logistica.css';
 
 function Logistica() {
     const dados = {
-        drones: { total: 10, ativos: 7 },
-        baterias: { total: 20, ativos: 14 },
-        dispensers: { total: 15, ativos: 9 },
-        operadores: { total: 4, ativos: 4 }
+        drones: { total: 10, ativos: 7, imgSrc: "../../../../public/drone_agras.png" },
+        baterias: { total: 20, ativos: 14, imgSrc: "/imagens/drones.jpg" },
+        dispensers: { total: 15, ativos: 9, imgSrc: "/imagens/drones.jpg" },
+        operadores: { total: 4, ativos: 4, imgSrc: "/imagens/drones.jpg" }
     };
 
     // Exemplo de funções handler
@@ -32,6 +32,7 @@ function Logistica() {
                     title="Drones"
                     total={dados.drones.total}
                     ativos={dados.drones.ativos}
+                    imgSrc={dados.drones.imgSrc}
                     visualizarSeção={() => visualizarSeção('drones')}
                     cadastrarItem={() => cadastrarItem('drones')}
                 />
@@ -39,6 +40,7 @@ function Logistica() {
                     title="Baterias"
                     total={dados.baterias.total}
                     ativos={dados.baterias.ativos}
+                    imgSrc={dados.baterias.imgSrc}
                     visualizarSeção={() => visualizarSeção('baterias')}
                     cadastrarItem={() => cadastrarItem('baterias')}
                 />
@@ -46,6 +48,7 @@ function Logistica() {
                     title="Dispensers"
                     total={dados.dispensers.total}
                     ativos={dados.dispensers.ativos}
+                    imgSrc={dados.dispensers.imgSrc}
                     visualizarSeção={() => visualizarSeção('dispensers')}
                     cadastrarItem={() => cadastrarItem('dispensers')}
                 />
@@ -53,6 +56,7 @@ function Logistica() {
                     title="Operadores"
                     total={dados.operadores.total}
                     ativos={dados.operadores.ativos}
+                    imgSrc={dados.operadores.imgSrc}
                     visualizarSeção={() => visualizarSeção('operadores')}
                     cadastrarItem={() => cadastrarItem('operadores')}
                 />
