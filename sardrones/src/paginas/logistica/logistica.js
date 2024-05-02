@@ -7,10 +7,10 @@ import './logistica.css';
 
 function Logistica() {
     const dados = {
-        drones: { total: 10, ativos: 7, imgSrc: "../../../../public/drone_agras.png" },
-        baterias: { total: 20, ativos: 14, imgSrc: "/imagens/drones.jpg" },
-        dispensers: { total: 15, ativos: 9, imgSrc: "/imagens/drones.jpg" },
-        operadores: { total: 4, ativos: 4, imgSrc: "/imagens/drones.jpg" }
+        drones: { total: 10, ativos: 7, imgSrc: "/drone_icon.png" },
+        baterias: { total: 20, ativos: 14, imgSrc: "/bateria_icon.png" },
+        dispensers: { total: 15, ativos: 9, imgSrc: "/dispenser_icon.png" },
+        operadores: { total: 4, ativos: 4, imgSrc: "/controle.png" }
     };
 
     // Exemplo de funções handler
