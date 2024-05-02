@@ -1,85 +1,56 @@
-/* Estilo geral do corpo e resets */
-body, input, button, textarea {
-  font-family: 'Roboto', sans-serif; /* Define a fonte para todos os textos relevantes */
-  color: #333;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Ajuda a gerenciar o layout com padding e border */
-}
-
-/* Estilo geral da página */
-.drone-page .App {
+main {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  background-color: #f4f4f4;
-  gap: 40px;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 3%;
 }
 
-/* Estilo dos containers individuais */
-.drone-page .App > div {
-  flex: 1;
+form {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  margin: 0 10px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 10%;
+  height: 70%;;
 }
 
-/* Estilo dos formulários e inputs */
-.drone-page form {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.drone-page input[type="text"],
-.drone-page button {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #ccc;
+input {
+  padding: 5%;
   border-radius: 6px;
+  border: 2px solid #ccc;
   transition: all 0.3s;
-}
-
-.drone-page input[type="text"]:focus,
-.drone-page button:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
-
-/* Botão de estilo moderno */
-.drone-page button {
-  background-color: #007bff;
-  color: white;
   cursor: pointer;
 }
 
-.drone-page button:hover {
-  background-color: #0056b3;
+button {
+  padding: 5%;
+  border-radius: 6px;
+  background-color: #4CAF50;
+  color: white;
+  transition: all 0.3s;
+  border: 2px solid #ccc;
+  cursor: pointer;
 }
 
-/* Estilo da lista de drones cadastrados */
-.drone-page ul {
-  width: 100%;
-  max-width: 400px;
-  list-style-type: none;
-  padding: 0;
+button:focus, input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px #4CAF50;
 }
 
-.drone-page ul li {
+button:hover {
+  background-color: #285f2b;
+}
+
+ul {
+  list-style: none;
+  
+}
+
+li {
   background-color: #ffffff;
   padding: 10px;
   margin-top: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px #rgba(0, 0, 0, 0.1);
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './logistica_drones.css';
-
+import NavegacaoLogistica from '../../componentes/navegacao_logistica/navegacao_logistica';
 
 function CadastroDrone(props) {
     const [nome, setNome] = useState('');
@@ -17,11 +17,10 @@ function CadastroDrone(props) {
         setModelo('');
         setHoras('');
         setObservacoes('');
-
-}
+    }
 
     return (
-        <div>
+        <div className="cadastro_container">
             <h2>Cadastrar Drone</h2>
             <form onSubmit={handleSubmit}>
                 <input
@@ -44,14 +43,14 @@ function CadastroDrone(props) {
                     value={modelo}
                     onChange={(e) => setModelo(e.target.value)}
                     required
-                    />
+                />
                 <input
                     type="text"
                     placeholder="Horas de Voo Iniciais"
                     value={horas}
                     onChange={(e) => setHoras(e.target.value)}
                     required
-                    />
+                />
                 <input
                     type="text"
                     placeholder="Observações"
@@ -67,15 +66,15 @@ function CadastroDrone(props) {
 
 function ListaDrones(props) {
     return (
-    <div>
-        <h2>Drones Cadastrados</h2>
-        <ul>
-        {props.drones.map((drone, index) => (
-            <li key={index}>{`Nome: ${drone.nome}, Série: ${drone.serie}, Modelo: ${drone.modelo}, Horas: ${drone.horas}, Observaçoes: ${drone.observacoes}`}</li>
-        ))}
-        </ul>
-    </div>
-);
+        <div className="lista_container">
+            <h2>Drones Cadastrados</h2>
+            <ul>
+            {props.drones.map((drone, index) => (
+                <li key={index}>{`Nome: ${drone.nome}, Série: ${drone.serie}, Modelo: ${drone.modelo}, Horas: ${drone.horas}, Observações: ${drone.observacoes}`}</li>
+            ))}
+            </ul>
+        </div>
+    );
 }
 
 function App() {
@@ -86,12 +85,15 @@ function App() {
     }
 
     return (
-        <div className="App drone-page">
+    <body>
+        <NavegacaoLogistica />
+        <main className="App drone-page">
             <CadastroDrone onCadastro={adicionarDrone} />
+            <hr></hr>
             <ListaDrones drones={drones} />
-        </div>
+        </main>
+    </body>
     );
 }
 
-
-    export default App;
+export default App;
