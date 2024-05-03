@@ -1,25 +1,27 @@
 /* CadastroConjunto.css */
 .modal-backdrop {
     position: fixed;
-    /*top: 0;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;*/
-    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro translúcido */
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1050; /* Garante que o backdrop fique sobre outros conteúdos */
 }
 
 .modal {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    z-index: 10;
+    width: auto;
+    max-width: 80%;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .cadastro-btn {
     margin: 20px;
@@ -33,7 +35,17 @@
     transition: background-color 0.3s;
 }
 
+.section {
+    margin-bottom: 20px;
+}
+
+.fechar_button {
+    margin-top: 10px;
+}
+
 .cadastro-btn:hover {
     background-color: #507835;
 }
+
+
 
