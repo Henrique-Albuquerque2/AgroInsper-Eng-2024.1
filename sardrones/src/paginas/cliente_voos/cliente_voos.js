@@ -1,13 +1,6 @@
-// import { Routes, Route, Link } from 'react-router-dom';
-// import Lobby from '../cliente_lobby/cliente_lobby';
-// import React, { useState, useRef, useMemo } from 'react';
-// import './cliente_voos.css'; // Adicione seus estilos específicos
-
-// import { useTable } from 'react-table';
-// import DatePicker from 'react-datepicker';
-// import "react-datepicker/dist/react-datepicker.css";
-import React, { useState } from 'react';
-import DataTable from './DataTable';
+import React, { useState, useMemo } from 'react';
+import { DataTable, data } from './DataTable';
+import './cliente_voos.css';
 
 function Voos() {
   const [filters, setFilters] = useState({
@@ -16,6 +9,11 @@ function Voos() {
     data: '',
     validacao: false
   });
+
+  // Extrair valores únicos para os dropdowns
+  const fazendas = useMemo(() => [...new Set(data.map(item => item.fazenda))], [data]);
+  const identificacoes = useMemo(() => [...new Set(data.map(item => item.identificacao))], [data]);
+  const datas = useMemo(() => [...new Set(data.map(item => item.data))], [data]);
 
   const handleFilterChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -26,38 +24,38 @@ function Voos() {
   };
 
   return (
-    <div className="App">
-      <div className="filters">
-        <select name="fazenda" onChange={handleFilterChange}>
-          <option value="">Select Fazenda</option>
-          <option value="Fazenda 1">Fazenda 1</option>
-          <option value="Fazenda 2">Fazenda 2</option>
-        </select>
+    <div className="Main">
 
-        <select name="identificacao" onChange={handleFilterChange}>
-          <option value="">Select Identificação</option>
-          <option value="ID 1">ID 1</option>
-          <option value="ID 2">ID 2</option>
-        </select>
+        <div className="filters">
+            <select name="fazenda" onChange={handleFilterChange} value={filters.fazenda}>
+                <option value="">Select Fazenda</option>
+                {fazendas.map((fazenda, index) => <option key={index} value={fazenda}>{fazenda}</option>)}
+            </select>
 
-        <select name="data" onChange={handleFilterChange}>
-          <option value="">Select Data</option>
-          <option value="2023-01-01">2023-01-01</option>
-          <option value="2023-01-02">2023-01-02</option>
-        </select>
+            <select name="identificacao" onChange={handleFilterChange} value={filters.identificacao}>
+                <option value="">Select Identificação</option>
+                {identificacoes.map((id, index) => <option key={index} value={id}>{id}</option>)}
+            </select>
 
-        <label>
-          <input
-            type="checkbox"
-            name="validacao"
-            checked={filters.validacao}
-            onChange={handleFilterChange}
-          /> Validação
-        </label>
-      </div>
-      <DataTable filters={filters} />
+            <select name="data" onChange={handleFilterChange} value={filters.data}>
+                <option value="">Select Data</option>
+                {datas.map((data, index) => <option key={index} value={data}>{data}</option>)}
+            </select>
+
+            <label>
+                <input
+                    type="checkbox"
+                    name="validacao"
+                    checked={filters.validacao}
+                    onChange={handleFilterChange}
+                /> Validação
+            </label>
+        </div>
+
+        <DataTable filters={filters} />
+      
     </div>
   );
 }
 
-export default Voos;
+export default Voos; 
