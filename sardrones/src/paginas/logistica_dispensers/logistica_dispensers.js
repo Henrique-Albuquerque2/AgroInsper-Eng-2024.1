@@ -1,54 +1,36 @@
 import React, { useState } from 'react';
-import './logistica_drones.css';
+import './logistica_dispensers.css';
 import NavegacaoLogistica from '../../componentes/navegacao_logistica/navegacao_logistica';
 
-function CadastroDrone(props) {
-    const [nome, setNome] = useState('');
-    const [serie, setSerie] = useState('');
+function CadastroDispenser(props) {
     const [modelo, setModelo] = useState('');
-    const [horas, setHoras] = useState('');
+    const [embalagens, setEmbalagens] = useState('');
     const [observacoes, setObservacoes] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.onCadastro({ nome, serie, modelo, horas, observacoes});
-        setNome('');
-        setSerie('');
+        props.onCadastro({modelo, embalagens, observacoes});
         setModelo('');
-        setHoras('');
+        setEmbalagens('');
         setObservacoes('');
     }
 
     return (
         <div className="cadastro_container">
-            <h2>Cadastrar Drone</h2>
+            <h2>Cadastro de Bateria</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Nome Fantasia"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Número de Série (SN)"
-                    value={serie}
-                    onChange={(e) => setSerie(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Modelo do Drone"
+                    placeholder="Modelo do Dispenser"
                     value={modelo}
                     onChange={(e) => setModelo(e.target.value)}
                     required
                 />
                 <input
                     type="text"
-                    placeholder="Horas de Voo Iniciais"
-                    value={horas}
-                    onChange={(e) => setHoras(e.target.value)}
+                    placeholder="Nº de embalagens por voo"
+                    value={embalagens}
+                    onChange={(e) => setEmbalagens(e.target.value)}
                     required
                 />
                 <input
@@ -58,19 +40,19 @@ function CadastroDrone(props) {
                     onChange={(e) => setObservacoes(e.target.value)}
                     required
                 />
-                <button type="submit">Cadastrar Drone</button>
+                <button type="submit">Cadastrar Dispenser</button>
             </form>
         </div>
     );
 }
 
-function ListaDrones(props) {
+function ListaDispensers(props) {
     return (
         <div className="lista_container">
-            <h2>Drones Cadastrados</h2>
+            <h2>Dispensers Cadastrados</h2>
             <ul>
-            {props.drones.map((drone, index) => (
-                <li key={index}>{`Nome: ${drone.nome}, Série: ${drone.serie}, Modelo: ${drone.modelo}, Horas: ${drone.horas}, Observações: ${drone.observacoes}`}</li>
+            {props.dispensers.map((dispenser, index) => (
+                <li key={index}>{`Modelo: ${dispenser.modelo}, Embalagens: ${dispenser.embalagens}, Observações: ${dispenser.observacoes}`}</li>
             ))}
             </ul>
         </div>
@@ -78,19 +60,20 @@ function ListaDrones(props) {
 }
 
 function App() {
-    const [drones, setDrones] = useState([]);
+    const [dispensers, setDispensers] = useState([]);
 
-    function adicionarDrone(drone) {
-        setDrones(drones.concat(drone));
+    function adicionarDispenser(novoDispenser) {
+        setDispensers([...dispensers, novoDispenser]);
     }
+    
 
     return (
     <body>
         <NavegacaoLogistica />
-        <main className="App drone-page">
-            <CadastroDrone onCadastro={adicionarDrone} />
+        <main className="App dispenser-page">
+            <CadastroDispenser onCadastro={adicionarDispenser} />
             <hr></hr>
-            <ListaDrones drones={drones} />
+            <ListaDispensers dispensers={dispensers} />
         </main>
     </body>
     );
