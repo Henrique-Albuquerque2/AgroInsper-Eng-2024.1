@@ -1,0 +1,15 @@
+.Main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+table {
+
+}

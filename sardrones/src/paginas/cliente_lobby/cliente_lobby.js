@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 
 function Lobby() {
 
-    // const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-    // const toggleMenu = () => {
-    //     setIsMenuOpen(!isMenuOpen);
-    // };
-
     return (
         <div className="Lobby">
 
