@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './header.css';
 import {
     DropdownMenu,
@@ -13,6 +13,7 @@ import {
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -27,17 +28,17 @@ function Header() {
         switch (pathname) {
             case '/':
                 return 'Área do Cliente';
-            case '/cliente_voos':
+            case "/cliente_voos":
                 return 'Meus Voos';
-            case '/cliente_analises':
+            case "/cliente_analises":
                 return 'Análises';
-            case '/perfil':
+            case "/perfil":
                 return 'Perfil';
-            case '/logistica':
+            case "/logistica":
                 return 'Logística';
-            case '/logistica_drones':
+            case "/logistica_drones":
                 return 'Drones';
-            case '/logistica_baterias':
+            case "/logistica_baterias":
                 return 'Baterias';
             case '/logistica_dispensers':
                 return 'Dispensers';
