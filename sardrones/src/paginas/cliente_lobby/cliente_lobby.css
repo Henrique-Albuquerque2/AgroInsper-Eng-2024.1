@@ -108,6 +108,7 @@ main {
     background-position: center center;
     display: flex;
     justify-content: end;
+    margin: 0;
 }
 
 .trapezoid {
