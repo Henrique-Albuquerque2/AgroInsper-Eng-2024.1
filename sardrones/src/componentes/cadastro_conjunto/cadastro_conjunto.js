@@ -14,12 +14,11 @@ function CadastroConjunto() {
                 Cadastrar Conjunto
             </button>
             {isOpen && (
-                <div className="modal-backdrop">
-                    <div className="modal">
+                <div className="modal-backdrop" onClick={toggleModal}> {/* Fecha o modal ao clicar fora dele */}
+                    <div className={isOpen ? "modal modal-active" : "modal"} onClick={e => e.stopPropagation()}> 
                         <h2>Cadastro de Conjunto</h2>
                         <p>Formulário para cadastrar um conjunto de equipamentos.</p>
-                        {/* Formulário ou outros elementos interativos */}
-                        <button onClick={toggleModal}>Fechar</button>
+                        <button className='fechar_button' onClick={toggleModal}>Fechar</button>
                     </div>
                 </div>
             )}
@@ -28,3 +27,4 @@ function CadastroConjunto() {
 }
 
 export default CadastroConjunto;
+
