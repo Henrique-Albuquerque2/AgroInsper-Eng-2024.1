@@ -1,8 +1,5 @@
 # AgroInsper-Eng-2024.1
 
-PARA ABRIR O SITE: npm run dev
-
-
 UMA VEZ:
 git checkout -b NOME_DA_BRANCH (cria branch)
 
