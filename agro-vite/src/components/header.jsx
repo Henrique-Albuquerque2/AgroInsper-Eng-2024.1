@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import './header.css'; // Se você tiver estilos específicos para o cabeçalho
+import './header.css';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -12,15 +12,15 @@ import {
 
 
 function Header() {
-    // const [isMenuOpen, setIsMenuOpen] = useState(false);
-    // const location = useLocation();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // const toggleMenu = () => {
-    //     setIsMenuOpen(!isMenuOpen);
-    // };
-    // const closeMenu = () => {
-    //     setIsMenuOpen(false);
-    // };
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
     // Função para determinar o título com base na rota
     const getPageTitle = (pathname) => {
@@ -64,32 +64,29 @@ function Header() {
                         <img src='/hamburger.png' alt='Hamburger'/>
                     </div> */}
                     <DropdownMenu>
-                        <DropdownMenuTrigger><img src='/hamburger.png' alt='Hamburger' /></DropdownMenuTrigger>
+                        <DropdownMenuTrigger onClick={toggleMenu} className="menu_hamburger" >
+                            <img src='/hamburger.png' alt='Hamburger'/>
+                        </DropdownMenuTrigger>
+                        {isMenuOpen && (
                         <DropdownMenuContent>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={closeMenu}>
                                 <Link to="/">Área do Cliente</Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={closeMenu}>
                                 <Link to="/cliente_voos">Meus Voos</Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={closeMenu}>
                                 <Link to="/cliente_analises">Análises</Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={closeMenu}>
                                 <Link to="/perfil">Perfil</Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={closeMenu}>
                                 <Link to="/logistica">Logística</Link>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
+                        )}
                     </DropdownMenu>
-                    {/* <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-                        <Link to="/" onClick={toggleMenu}>Área do Cliente</Link>
-                        <Link to="/cliente_voos" onClick={toggleMenu}>Meus Voos</Link>
-                        <Link to="/cliente_analises" onClick={toggleMenu}>Análises</Link>
-                        <Link to="/perfil" onClick={toggleMenu}>Perfil</Link>
-                        <Link to="/logistica" onClick={toggleMenu}>Logística</Link>
-                    </div>*/}
                 </nav> 
                 <Link to="/perfil">
                     <img src='/perfil.png' alt='Perfil' />
