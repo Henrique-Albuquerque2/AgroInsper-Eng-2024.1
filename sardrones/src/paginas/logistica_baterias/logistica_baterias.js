@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './logistica_baterias.css';
 import NavegacaoLogistica from '../../componentes/navegacao_logistica/navegacao_logistica';
 
-function CadastroDrone(props) {
+function CadastroBateria(props) {
     const [serie, setSerie] = useState('');
     const [modelo, setModelo] = useState('');
     const [ciclos, setCiclos] = useState('');
@@ -55,13 +55,13 @@ function CadastroDrone(props) {
     );
 }
 
-function ListaDrones(props) {
+function ListaBaterias(props) {
     return (
         <div className="lista_container">
             <h2>Baterias Cadastradas</h2>
             <ul>
-            {props.drones.map((drone, index) => (
-                <li key={index}>{`Nome: ${drone.nome}, Série: ${drone.serie}, Modelo: ${drone.modelo}, Ciclos: ${drone.ciclos}, Observações: ${drone.observacoes}`}</li>
+            {props.baterias.map((bateria, index) => (
+                <li key={index}>{`Série: ${bateria.serie}, Modelo: ${bateria.modelo}, Ciclos: ${bateria.ciclos}, Observações: ${bateria.observacoes}`}</li>
             ))}
             </ul>
         </div>
@@ -69,19 +69,19 @@ function ListaDrones(props) {
 }
 
 function App() {
-    const [drones, setDrones] = useState([]);
+    const [baterias, setBaterias] = useState([]);
 
-    function adicionarDrone(drone) {
-        setDrones(drones.concat(drone));
+    function adicionarBateria(bateria) {
+        setBaterias(baterias.concat(bateria));
     }
 
     return (
     <body>
         <NavegacaoLogistica />
-        <main className="App drone-page">
-            <CadastroDrone onCadastro={adicionarDrone} />
+        <main className="App bateria-page">
+            <CadastroBateria onCadastro={adicionarBateria} />
             <hr></hr>
-            <ListaDrones drones={drones} />
+            <ListaBaterias baterias={baterias} />
         </main>
     </body>
     );
