@@ -60,10 +60,6 @@ function Header() {
 
             </div>
             <div className="area-login">
-                <nav>
-                    {/* <div onClick={toggleMenu}>
-                        <img src='/hamburger.png' alt='Hamburger'/>
-                    </div> */}
                     <DropdownMenu>
                         <DropdownMenuTrigger onClick={toggleMenu} className="menu_hamburger" >
                             <img src='/hamburger.png' alt='Hamburger'/>
@@ -88,7 +84,6 @@ function Header() {
                         </DropdownMenuContent>
                         )}
                     </DropdownMenu>
-                </nav> 
                 <Link to="/perfil">
                     <img src='/perfil.png' alt='Perfil' />
                 </Link>
