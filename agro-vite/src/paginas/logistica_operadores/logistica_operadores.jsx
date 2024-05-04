@@ -1,99 +1,48 @@
-import React, { useState } from 'react';
-import './logistica_drones.css';
+import React from 'react';
+import './logistica_operadores.css';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table"
 
-function CadastroDrone(props) {
-    const [nome, setNome] = useState('');
-    const [serie, setSerie] = useState('');
-    const [modelo, setModelo] = useState('');
-    const [horas, setHoras] = useState('');
-    const [observacoes, setObservacoes] = useState('');
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        props.onCadastro({ nome, serie, modelo, horas, observacoes});
-        setNome('');
-        setSerie('');
-        setModelo('');
-        setHoras('');
-        setObservacoes('');
-    }
-
+function LogisticaOperadores() {
     return (
-        <div className="cadastro_container">
-            <h2>Cadastrar Drone</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Nome Fantasia"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Número de Série (SN)"
-                    value={serie}
-                    onChange={(e) => setSerie(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Modelo do Drone"
-                    value={modelo}
-                    onChange={(e) => setModelo(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Horas de Voo Iniciais"
-                    value={horas}
-                    onChange={(e) => setHoras(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Observações"
-                    value={observacoes}
-                    onChange={(e) => setObservacoes(e.target.value)}
-                    required
-                />
-                <button type="submit">Cadastrar Drone</button>
-            </form>
+        <div className="logistica_operadores_container">
+            <NavegacaoLogistica />
+            <Table>
+                {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[100px]">Nome</TableHead>
+                        <TableHead>Nome de Guerra</TableHead>
+                        <TableHead>Número de Guerra</TableHead>
+                        <TableHead className="text-right">Horas Sobrevoeadas</TableHead>
+                        <TableHead>Área total Levantada [ha]</TableHead>
+                        <TableHead>Nº de Voos</TableHead>
+                        <TableHead>Ações</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>Gabriel Adriano de Melo</TableCell>
+                        <TableCell>Gabriel</TableCell>
+                        <TableCell>12</TableCell>
+                        <TableCell>0.0</TableCell>
+                        <TableCell>200</TableCell>
+                        <TableCell>1</TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+
         </div>
     );
 }
 
-function ListaDrones(props) {
-    return (
-        <div className="lista_container">
-            <h2>Drones Cadastrados</h2>
-            <ul>
-            {props.drones.map((drone, index) => (
-                <li key={index}>{`Nome: ${drone.nome}, Série: ${drone.serie}, Modelo: ${drone.modelo}, Horas: ${drone.horas}, Observações: ${drone.observacoes}`}</li>
-            ))}
-            </ul>
-        </div>
-    );
-}
-
-function App() {
-    const [drones, setDrones] = useState([]);
-
-    function adicionarDrone(drone) {
-        setDrones(drones.concat(drone));
-    }
-
-    return (
-    <body>
-        <NavegacaoLogistica />
-        <main className="App drone-page">
-            <CadastroDrone onCadastro={adicionarDrone} />
-            <hr></hr>
-            <ListaDrones drones={drones} />
-        </main>
-    </body>
-    );
-}
-
-export default App;
+export default LogisticaOperadores;
