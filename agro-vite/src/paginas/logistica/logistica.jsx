@@ -93,13 +93,36 @@ function Logistica() {
                 <DialogContent>
                     <DialogTitle>Cadastrar Novo Conjunto</DialogTitle>
                     <form onSubmit={handleSubmit}>
-                    <div className="section">
+                        <div className="section_drones">
                             <h3>Drone</h3>
-                            <input type="text" placeholder="Nome Fantasia" value={drone.nome} onChange={(e) => setDrone({...drone, nome: e.target.value})} required />
-                            <input type="text" placeholder="Número de Série" value={drone.serie} onChange={(e) => setDrone({...drone, serie: e.target.value})} required />
-                            {/* Outros campos */}
+                            <input type="text" placeholder="Nome Fantasia" value={drone.nome} onChange={(e) => setDrone({ ...drone, nome: e.target.value })} required />
+                            <input type="text" placeholder="Número de Série" value={drone.serie} onChange={(e) => setDrone({ ...drone, serie: e.target.value })} required />
+                            <input type="text" placeholder="Modelo do Drone" value={drone.modelo} onChange={(e) => setDrone({ ...drone, modelo: e.target.value })} required />
+                            <input type="text" placeholder="Horas de Voo Iniciais" value={drone.horas} onChange={(e) => setDrone({ ...drone, horas: e.target.value })} required />
+                            <input type="text" placeholder="Observações" value={drone.observacoes} onChange={(e) => setDrone({ ...drone, observacoes: e.target.value })} required />
                         </div>
-                        {/* Repetir para baterias, dispensers, e operadores */}
+                        <div className="section_baterias">
+                            <h3>Bateria</h3>
+                            <input type="text" placeholder="Número de Série" value={bateria.serie} onChange={(e) => setBateria({ ...bateria, serie: e.target.value })} required />
+                            <input type="text" placeholder="Modelo da Bateria" value={bateria.modelo} onChange={(e) => setBateria({ ...bateria, modelo: e.target.value })} required />
+                            <input type="text" placeholder="Ciclos Iniciais" value={bateria.ciclos} onChange={(e) => setBateria({ ...bateria, ciclos: e.target.value })} required />
+                            <input type="text" placeholder="Observações" value={bateria.observacoes} onChange={(e) => setBateria({ ...bateria, observacoes: e.target.value })} required />
+                        </div>
+                        <div className="section_dispensers">
+                            <h3>Dispenser</h3>
+                            <input type="text" placeholder="Modelo" value={dispenser.modelo} onChange={(e) => setDispenser({ ...dispenser, modelo: e.target.value })} required />
+                            <input type="text" placeholder="Nº de Embalagens por voo" value={dispenser.embalagens} onChange={(e) => setDispenser({ ...dispenser, embalagens: e.target.value })} required />
+                            <input type="text" placeholder="Observações" value={dispenser.observacoes} onChange={(e) => setDispenser({ ...dispenser, observacoes: e.target.value })} required />
+                        </div>
+                        <div className="section_operador">
+                            <h3>Operador</h3>
+                            <input type="text" placeholder="Nome" value={operador.nome} onChange={(e) => setOperador({ ...operador, nome: e.target.value })} required />
+                            <input type="text" placeholder="Nome de Guerra" value={operador.nomeGuerra} onChange={(e) => setOperador({ ...operador, nomeGuerra: e.target.value })} required />
+                            <input type="text" placeholder="Número de Guerra" value={operador.numeroGuerra} onChange={(e) => setOperador({ ...operador, numeroGuerra: e.target.value })} required />
+                            <input type="text" placeholder="Horas Sobrevoadas" value={operador.horasVoadas} onChange={(e) => setOperador({ ...operador, horasVoadas: e.target.value })} required />
+                            <input type="text" placeholder="Área total levantada [ha]" value={operador.areaLevantada} onChange={(e) => setOperador({ ...operador, areaLevantada: e.target.value })} required />
+                            <input type="text" placeholder="Nº de Voos" value={operador.voos} onChange={(e) => setOperador({ ...operador, voos: e.target.value })} required />
+                        </div>
                         <button type="submit">Enviar</button>
                     </form>
                     <button onClick={closeConjuntoDialog}>Fechar</button>
