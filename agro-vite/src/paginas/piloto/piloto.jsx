@@ -52,7 +52,7 @@ function Piloto() {
                     <DialogTrigger>Cadastrar Fazenda</DialogTrigger>
                     <DialogContent>
                         <DialogTitle>Cadastrar Nova Fazenda</DialogTitle>
-                        {/* Formulário de cadastro */}
+                        {/* Colocar o formulário de cadastro */}
                     </DialogContent>
                 </Dialog>
 
@@ -60,14 +60,14 @@ function Piloto() {
                     <DialogTrigger>Cadastrar Talhão</DialogTrigger>
                     <DialogContent>
                         <DialogTitle>Cadastrar Novo Talhão</DialogTitle>
-                        {/* Formulário de cadastro */}
+                        {/* Colocar o formulário de cadastro */}
                     </DialogContent>
                 </Dialog>
             </div>
 
             {/* Espaço para o mapa */}
             <div className="map-area">
-                {/* Inserir o componente de mapa ou uma imagem estática do mapa */}
+                <img src="/mapa_teste.jpg" alt="Mapa" />
             </div>
         </div>
     );
