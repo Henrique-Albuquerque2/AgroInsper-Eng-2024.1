@@ -1,10 +1,9 @@
 .App-header {
     height: 12vh;
-    background-color: #f8f9fa;
+    background-color: #ADC737;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #ADC737 30%, transparent 70%);
 }
 
 .logo {
