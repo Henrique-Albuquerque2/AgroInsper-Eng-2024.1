@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
 import PainelLogistica from '../../components/painel_logistica/painel_logistica';
-import CadastroConjunto from '../../components/cadastro_conjunto/cadastro_conjunto';
+//import CadastroConjunto from '../../components/cadastro_conjunto/cadastro_conjunto';
 import './logistica.css';
 import {
     Dialog,
@@ -23,6 +23,13 @@ function Logistica() {
 
     const openDialog = () => setIsDialogOpen(true);
     const closeDialog = () => setIsDialogOpen(false);
+
+    const [isConjuntoDialogOpen, setIsConjuntoDialogOpen] = useState(false);
+    const openConjuntoDialog = () => setIsConjuntoDialogOpen(true);
+    const closeConjuntoDialog = () => setIsConjuntoDialogOpen(false);
+
+
+    
 
     const dados = {
         drones: { total: 10, ativos: 7, imgSrc: "/drone_icon.png" },
@@ -86,15 +93,12 @@ function Logistica() {
                     cadastrarItem={() => cadastrarItem('operadores')}
                 />
             </div>
-            <CadastroConjunto />
-            <Dialog isOpen={isDialogOpen} onDismiss={closeDialog}>
+            <Dialog isOpen={isConjuntoDialogOpen} className = "cadastro_conjunto">
+            <DialogTrigger className="cadastro_conjunto-trigger" onClick={openConjuntoDialog}>Cadastrar Conjunto</DialogTrigger>
                 <DialogContent>
-                    <DialogTitle>Cadastrar Novo Item</DialogTitle>
-                    <DialogDescription>
-                        Preencha os detalhes necessários para cadastrar um novo item.
-                    </DialogDescription>
-                    {/* Inserir formulário de cadastro aqui */}
-                    <button onClick={closeDialog}>Fechar</button>
+                    <DialogTitle>Cadastrar Novo Conjunto</DialogTitle>
+                    {/* Inserir campos do formulário aqui */}
+                    <button onClick={closeConjuntoDialog}>Fechar</button>
                 </DialogContent>
             </Dialog>
         </div>

@@ -8,3 +8,14 @@
     padding: 0 10px; /* Espaçamento lateral para não tocar nas bordas da tela */
     margin-top: 5%;
 }
+
+.cadastro_conjunto-trigger {
+    margin-top: 5%; /* Mesma distância que os paineis estão da parte de cima */
+    padding: 2vh 2vw; /* Usa viewport height e width para o padding */
+    font-size: 1.1rem;
+    background-color: #5F903F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+
+}
