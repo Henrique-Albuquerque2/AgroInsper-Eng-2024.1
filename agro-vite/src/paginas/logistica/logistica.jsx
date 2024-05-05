@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
 import PainelLogistica from '../../components/painel_logistica/painel_logistica';
 import CadastroConjunto from '../../components/cadastro_conjunto/cadastro_conjunto';
 import './logistica.css';
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+
 
 
 function Logistica() {
+
+    const navigate = useNavigate();
+
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+    const openDialog = () => setIsDialogOpen(true);
+    const closeDialog = () => setIsDialogOpen(false);
+
     const dados = {
         drones: { total: 10, ativos: 7, imgSrc: "/drone_icon.png" },
         baterias: { total: 20, ativos: 14, imgSrc: "/bateria_icon.png" },
@@ -16,12 +34,19 @@ function Logistica() {
     // Exemplo de funções handler
     const visualizarSeção = (seção) => {
         console.log(`Visualizar seção: ${seção}`);
-        // Aqui você pode implementar navegação ou outra lógica
+        
+        const routeMap = {
+            drones: '/logistica_drones',
+            baterias: '/logistica_baterias',
+            dispensers: '/logistica_dispensers',
+            operadores: '/logistica_operadores'
+        };
+        navigate(routeMap[seção]);
     };
 
     const cadastrarItem = (item) => {
+        openDialog();
         console.log(`Cadastrar item: ${item}`);
-        // Aqui você pode abrir um modal de cadastro ou navegar para uma página de cadastro
     };
 
     return (
@@ -62,6 +87,16 @@ function Logistica() {
                 />
             </div>
             <CadastroConjunto />
+            <Dialog isOpen={isDialogOpen} onDismiss={closeDialog}>
+                <DialogContent>
+                    <DialogTitle>Cadastrar Novo Item</DialogTitle>
+                    <DialogDescription>
+                        Preencha os detalhes necessários para cadastrar um novo item.
+                    </DialogDescription>
+                    {/* Inserir formulário de cadastro aqui */}
+                    <button onClick={closeDialog}>Fechar</button>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }
