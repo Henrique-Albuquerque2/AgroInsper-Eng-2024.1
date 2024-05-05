@@ -42,16 +42,6 @@
     transition: background-color 0.3s;
 }
 
-/* .info-panel-actions button:first-child {
-    margin-left: 0; /* Remove a margem esquerda do primeiro botão */
-
-
-/*.info-panel-actions button:last-child {
-    margin-right: 0; /* Remove a margem direita do último botão */
-
-
-
-
 .info-panel-actions button:hover {
     background-color: #507835;
 }
