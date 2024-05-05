@@ -30,3 +30,12 @@
     border: none;
     outline: none;
 }
+
+.menu_hamburger:hover{
+    background-color: transparent;
+}
+.menu_hamburger:focus{
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
