@@ -1,56 +1,18 @@
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 3%;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10%;
-    height: 70%;;
-  }
-  
-  input {
-    padding: 5%;
-    border-radius: 6px;
-    border: 2px solid #ccc;
-    transition: all 0.3s;
-    cursor: pointer;
-  }
-  
-  button {
-    padding: 5%;
-    border-radius: 6px;
-    background-color: #4CAF50;
-    color: white;
-    transition: all 0.3s;
-    border: 2px solid #ccc;
-    cursor: pointer;
-  }
-  
-  button:focus, input:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 10px #4CAF50;
-  }
-  
-  button:hover {
-    background-color: #285f2b;
-  }
-  
-  ul {
-    list-style: none;
-    
-  }
-  
-  li {
-    background-color: #ffffff;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+/* Estilização para os cabeçalhos da tabela */
+table {
+  margin-top: 2rem;
+}
+
+th {
+  text-align: left;
+  padding: 0.5rem;
+  /* background-color: #f4f4f4;  Cor de fundo para o cabeçalho da tabela se quiser colocar*/
+  border-bottom: 1px solid #ddd;  /* Linha de separação entre cabeçalho e corpo */
+}
+
+/* Estilização para as células do corpo da tabela */
+td {
+  text-align: left;
+  padding: 0.5rem;  
+  border-bottom: 1px solid #ddd;  /* Linha de separação entre as linhas */
+}
