@@ -1,35 +1,33 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
 import PainelLogistica from '../../components/painel_logistica/painel_logistica';
-//import CadastroConjunto from '../../components/cadastro_conjunto/cadastro_conjunto';
 import './logistica.css';
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog"
-
-
+} from "@/components/ui/dialog";
 
 function Logistica() {
-
     const navigate = useNavigate();
 
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-    const openDialog = () => setIsDialogOpen(true);
-    const closeDialog = () => setIsDialogOpen(false);
+    // Estados para cada equipamento
+    const [drone, setDrone] = useState({ nome: '', serie: '', modelo: '', horas: '', observacoes: '' });
+    const [bateria, setBateria] = useState({ serie: '', modelo: '', ciclos: '', observacoes: '' });
+    const [dispenser, setDispenser] = useState({ modelo: '', embalagens: '', observacoes: '' });
+    const [operador, setOperador] = useState({ nome: '', nomeGuerra: '', numeroGuerra: '', horasVoadas: '', areaLevantada: '', voos: '' });
 
     const [isConjuntoDialogOpen, setIsConjuntoDialogOpen] = useState(false);
     const openConjuntoDialog = () => setIsConjuntoDialogOpen(true);
     const closeConjuntoDialog = () => setIsConjuntoDialogOpen(false);
 
-
-    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log({ drone, bateria, dispenser, operador });
+        closeConjuntoDialog();
+    };
 
     const dados = {
         drones: { total: 10, ativos: 7, imgSrc: "/drone_icon.png" },
@@ -38,10 +36,7 @@ function Logistica() {
         operadores: { total: 4, ativos: 4, imgSrc: "/controle.png" }
     };
 
-    // Exemplo de funções handler
     const visualizarSeção = (seção) => {
-        console.log(`Visualizar seção: ${seção}`);
-        
         const routeMap = {
             drones: '/logistica_drones',
             baterias: '/logistica_baterias',
@@ -93,11 +88,20 @@ function Logistica() {
                     cadastrarItem={() => cadastrarItem('operadores')}
                 />
             </div>
-            <Dialog isOpen={isConjuntoDialogOpen} className = "cadastro_conjunto">
-            <DialogTrigger className="cadastro_conjunto-trigger" onClick={openConjuntoDialog}>Cadastrar Conjunto</DialogTrigger>
+            <Dialog isOpen={isConjuntoDialogOpen} className="cadastro_conjunto">
+                <DialogTrigger className="cadastro_conjunto-trigger" onClick={openConjuntoDialog}>Cadastrar Conjunto</DialogTrigger>
                 <DialogContent>
                     <DialogTitle>Cadastrar Novo Conjunto</DialogTitle>
-                    {/* Inserir campos do formulário aqui */}
+                    <form onSubmit={handleSubmit}>
+                    <div className="section">
+                            <h3>Drone</h3>
+                            <input type="text" placeholder="Nome Fantasia" value={drone.nome} onChange={(e) => setDrone({...drone, nome: e.target.value})} required />
+                            <input type="text" placeholder="Número de Série" value={drone.serie} onChange={(e) => setDrone({...drone, serie: e.target.value})} required />
+                            {/* Outros campos */}
+                        </div>
+                        {/* Repetir para baterias, dispensers, e operadores */}
+                        <button type="submit">Enviar</button>
+                    </form>
                     <button onClick={closeConjuntoDialog}>Fechar</button>
                 </DialogContent>
             </Dialog>

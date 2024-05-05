@@ -44,6 +44,8 @@ function Header() {
                 return 'Dispensers';
             case '/logistica_operadores':
                 return 'Operadores';
+            case '/piloto':
+                return 'Piloto';
             default:
                 return 'Página';
         }
@@ -80,6 +82,9 @@ function Header() {
                             </DropdownMenuItem>
                             <DropdownMenuItem onClick={closeMenu}>
                                 <Link to="/logistica">Logística</Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem onClick={closeMenu}>
+                                <Link to="/piloto">Piloto</Link>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                         )}
