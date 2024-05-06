@@ -10,24 +10,21 @@ import { Label } from "@/components/ui/label";
 
 function PerfilEmpresas() {
     return (
-        <div className="p-6">
+        <div>
             <NavegacaoPerfil />
-
-            <div className="border rounded-lg p-6 max-w-4xl mx-auto">
-                <h1 className="text-3xl font-bold mb-6">Empresas</h1>
-                <form className="flex items-center gap-2">
+            <div className="margin">
+                <h1 className="title">Empresas</h1>
+                <form className="form-search">
                     <Input name="nomeEmpresa" placeholder="Nome da Empresa" className="w-auto"/>
-                    <Input name="cnpj" placeholder="CNPJ" className="w-auto"/>
                     <Button type="submit" variant="link">
                         <Search className="w-4 h-4 mr-2"/> {/* Ícone de Lupa */}
-                        Buscar
+                        Filtrar
                     </Button> {/* Botão de Busca */}
                 </form>
 
-                {/* Seção Usuários */}
-                <div className="mb-8">
-                    <h2 className="text-xl font-bold mb-4">Empresas</h2>
-                    <div className="flex items-center justify-between">
+                {/* Seção Empresas */}
+                <div>
+                    <div className="button">
                         <Dialog>
                             <DialogTrigger asChild>
                                 <Button variant="primary">

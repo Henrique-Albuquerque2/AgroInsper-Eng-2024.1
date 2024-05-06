@@ -5,7 +5,7 @@ import NavegacaoPerfil from "@/components/navagacao_perfil/navegacao_perfil";
 
 function PerfilUsuarios() {
     return (
-        <div className="p-6">
+        <div>
             <NavegacaoPerfil />
             <div className="border rounded-lg p-6 max-w-4xl mx-auto">
                 {/* Seção Usuários */}
