@@ -1,0 +1,23 @@
+/* arquivo navegacao_perfil.css */
+.sub-navigation {
+    display: flex;
+    justify-content: center;
+    background: #f0f0f0; /* fundo cinza claro */
+    padding: 10px 0; /* espaçamento vertical */
+    border-bottom: 1px solid #ccc; /* borda na parte inferior */
+}
+
+.sub-navigation a {
+    text-decoration: none; /* remove sublinhado dos links */
+    color: #333; /* cor do texto */
+    padding: 10px 15px; /* espaçamento interno */
+    margin: 0 10px; /* espaçamento entre os links */
+    border-radius: 4px; /* bordas arredondadas */
+    transition: background-color 0.3s, color 0.3s; /* transição suave para hover e ativo */
+}
+
+.sub-navigation a:hover,
+.sub-navigation .active {
+    background-color: #5f903fd4; /* cor de fundo para hover e ativo */
+    color: white; /* cor do texto para hover e ativo */
+}
