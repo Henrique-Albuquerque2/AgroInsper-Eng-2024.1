@@ -13,6 +13,9 @@
 
 .mb-8 {
     margin-bottom: 2rem;
+    max-height: 500px; /* ou a altura que se ajuste bem ao seu layout */
+    overflow-y: auto;  /* ativa a rolagem vertical se o conteúdo for maior que o container */
+    overflow-x: auto;  /* ativa a rolagem horizontal se o conteúdo for maior que o container */
 }
 
 .text-xl {
@@ -30,3 +33,5 @@
 .rounded-lg {
     border-radius: 0.5rem;
 }
+
+
