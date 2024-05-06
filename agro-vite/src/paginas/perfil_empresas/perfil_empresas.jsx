@@ -26,7 +26,7 @@ function PerfilEmpresas() {
 
                 {/* Seção Usuários */}
                 <div className="mb-8">
-                    <h2 className="text-xl font-bold mb-4">Usuários</h2>
+                    <h2 className="text-xl font-bold mb-4">Empresas</h2>
                     <div className="flex items-center justify-between">
                         <Dialog>
                             <DialogTrigger asChild>
