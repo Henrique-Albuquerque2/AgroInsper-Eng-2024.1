@@ -10,6 +10,9 @@ import CadastroBateria from './paginas/logistica_baterias/logistica_baterias';
 import CadastroDispenser from './paginas/logistica_dispensers/logistica_dispensers';
 import LogisticaOperadores from './paginas/logistica_operadores/logistica_operadores';
 import Piloto from './paginas/piloto/piloto';
+import PerfilUsuarios from './paginas/perfil_usuarios/perfil_usuarios';
+import PerfilEmpresas from './paginas/perfil_empresas/perfil_empresas';
+
 
 
 // Importar páginas !!!!!
@@ -28,6 +31,10 @@ function App() {
           <Route path="/logistica_dispensers" element={<CadastroDispenser />} />
           <Route path="/logistica_operadores" element={<LogisticaOperadores />} />
           <Route path="/piloto" element={<Piloto />} />
+          <Route path="/perfil_usuarios" element={<PerfilUsuarios />} />
+          <Route path="/perfil_empresas" element={<PerfilEmpresas />} />
+          
+          
           {/* <Route path="/" element={<Voos />} /> */}
           {/* Adicione mais rotas conforme necessário */}
         </Routes>
