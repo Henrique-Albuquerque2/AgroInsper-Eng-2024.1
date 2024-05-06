@@ -28,17 +28,17 @@ function Voos() {
 
         <div className="filters">
             <select name="fazenda" onChange={handleFilterChange} value={filters.fazenda}>
-                <option value="">Select Fazenda</option>
+                <option value="">Fazenda</option>
                 {fazendas.map((fazenda, index) => <option key={index} value={fazenda}>{fazenda}</option>)}
             </select>
 
             <select name="identificacao" onChange={handleFilterChange} value={filters.identificacao}>
-                <option value="">Select Identificação</option>
+                <option value="">Identificação</option>
                 {identificacoes.map((id, index) => <option key={index} value={id}>{id}</option>)}
             </select>
 
             <select name="data" onChange={handleFilterChange} value={filters.data}>
-                <option value="">Select Data</option>
+                <option value="">Data</option>
                 {datas.map((data, index) => <option key={index} value={data}>{data}</option>)}
             </select>
 
