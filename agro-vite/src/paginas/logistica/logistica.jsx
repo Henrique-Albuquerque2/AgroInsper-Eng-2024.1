@@ -92,7 +92,7 @@ function Logistica() {
                 <DialogTrigger className="cadastro_conjunto-trigger" onClick={openConjuntoDialog}>Cadastrar Conjunto</DialogTrigger>
                 <DialogContent>
                     <DialogTitle>Cadastrar Novo Conjunto</DialogTitle>
-                    <form onSubmit={handleSubmit}>
+                    <form className='cadastro_conjunto-formulario' onSubmit={handleSubmit}>
                         <div className="section_drones">
                             <h3>Drone</h3>
                             <input type="text" placeholder="Nome Fantasia" value={drone.nome} onChange={(e) => setDrone({ ...drone, nome: e.target.value })} required />
