@@ -32,7 +32,7 @@ function Header() {
                 return 'Meus Voos';
             case "/cliente_analises":
                 return 'Análises';
-            case "/perfil":
+            case "/perfil_usuarios":
                 return 'Perfil';
             case "/logistica":
                 return 'Logística';
@@ -78,7 +78,7 @@ function Header() {
                                 <Link to="/cliente_analises">Análises</Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem onClick={closeMenu}>
-                                <Link to="/perfil">Perfil</Link>
+                                <Link to="/perfil_usuarios">Perfil</Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem onClick={closeMenu}>
                                 <Link to="/logistica">Logística</Link>
