@@ -1,4 +1,4 @@
-/* logistica.css ou o arquivo CSS global */
+/* logistica.css*/
 .info-panels {
     display: flex;
     justify-content: space-between;
@@ -17,5 +17,11 @@
     color: white;
     border: none;
     border-radius: 4px;
+}
 
+.cadastro_conjunto-formulario{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ajuste o número 3 conforme o número de colunas desejado */
+    gap: 2%; /* Espaço entre as colunas */
+    
 }
