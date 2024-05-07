@@ -9,34 +9,33 @@ function InformationPanel({ item, onClose }) {
   };
 
   return (
-    <div className="information-panel">
-      <img className='earth' src='/earth_map.png' alt='earth_map'/>
-      <div className='quadrante'>
-        <ul>
-          <li>Data: {item.data}</li>
-          <li>Área: 300ha</li>
-          <li>Embalagens lançadas: 16251</li>
-          <li>Responsável: Henrique Albuquerque</li>
-          <li>Temperatura: 28°C</li>
-          <li>Humidade: 70%</li>
-          <li>Duração: 40 minutos</li>
-          <li>Drone: Agras T40</li>
-
-          {/* <li>Fazenda: {item.fazenda}</li>
-          <li>Identificação: {item.identificacao}</li>
+    <div className='tudo'>
+      <div className="information-panel">
+        <img className='earth' src='/earth_map.png' alt='earth_map'/>
+        <div className='quadrante'>
           
-          <li>Validação: {item.validacao ? 'Sim' : 'Não'}</li>         */}
-        </ul>
+          <ul>
+            <li>Data: {item.data}</li>
+            <li>Área: 300ha</li>
+            <li>Embalagens lançadas: 16251</li>
+            <li>Responsável: Henrique Albuquerque</li>
+            <li>Temperatura: 28°C</li>
+            <li>Humidade: 70%</li>
+            <li>Duração: 40 minutos</li>
+            <li>Drone: Agras T40</li>
+          </ul>
+          
+          <div className='botoes'>
+            <button className='bot' onClick={onClose}>Fechar</button>
+            <button className='bot' onClick={handleButtonClick}>Validar</button>
+          {showTextBox && <input className='text' type="text" placeholder="Comentários" autoFocus />}
+            <button className='bot'>Download</button>
+          </div>
 
-        <div className='botoes'>
-          <button className='bot' onClick={onClose}>Fechar</button>
-          <button className='bot' onClick={handleButtonClick}>Validar</button>
-        {showTextBox && <input className='text' type="text" placeholder="Comentários" autoFocus />}
-          <button className='bot'>Download</button>
         </div>
-      </div>
 
-    </div>
+      </div>
+    </div>  
   );
 }
 

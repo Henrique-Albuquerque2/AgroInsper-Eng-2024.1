@@ -63,7 +63,7 @@ function Voos() {
             </label>
         </div>
 
-        <DataTable filters={{filters}} onItemClick={handleItemClick} />
+        <DataTable filters={filters} onItemClick={handleItemClick} />
         {selectedItem && <InformationPanel item={selectedItem} onClose={handleClose} />}
       
     </div>
