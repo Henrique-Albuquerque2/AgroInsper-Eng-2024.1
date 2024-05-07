@@ -35,7 +35,7 @@ function CadastroDrone(props) {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Nome Fantasia"
+                    placeholder="Nome do Drone"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
                     required

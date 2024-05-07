@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import './logistica_dispensers.css';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
-// import {
-//     Table,
-//     TableBody,
-//     TableCell,
-//     TableHead,
-//     TableHeader,
-//     TableRow,
-//   } from "@/components/ui/table"
-  
+
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table"
+
 
 function CadastroDispenser(props) {
     const [modelo, setModelo] = useState('');
@@ -26,7 +27,7 @@ function CadastroDispenser(props) {
 
     return (
         <div className="cadastro_container">
-            <h2>Cadastro de Bateria</h2>
+            <h2>Cadastro Dispenser</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -55,46 +56,37 @@ function CadastroDispenser(props) {
     );
 }
 
-
 function ListaDispensers(props) {
     return (
-        <div className="lista_container">
-            <h2>Dispensers Cadastrados</h2>
-            <ul>
-            {props.dispensers.map((dispenser, index) => (
-                <li key={index}>{`Modelo: ${dispenser.modelo}, Embalagens: ${dispenser.embalagens}, Observações: ${dispenser.observacoes}`}</li>
-            ))}
-            </ul>
+        <div className="lista_container_dispensers">
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[100px]">Modelo</TableHead>
+                        <TableHead>Embalagens</TableHead>
+                        <TableHead className="text-right">Observações</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                {props.dispensers.map((dispenser, index) => (
+                    <TableRow key={index}>
+                        <TableCell className="font-medium">{dispenser.modelo}</TableCell>
+                        <TableCell>{dispenser.embalagens}</TableCell>
+                        <TableCell className="text-right">{dispenser.observacoes}</TableCell>
+                    </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
         </div>
-    //     <Table>
-    //     <TableHeader>
-    //       <TableRow>
-    //         <TableHead className="w-[100px]">Modelo</TableHead>
-    //         <TableHead>Embalagens</TableHead>
-    //         <TableHead className="text-right">Observações</TableHead>
-    //       </TableRow>
-    //     </TableHeader>
-    //     <TableBody>
-    //     {props.dispenser.map((dispenser, index) => (
-    //       <TableRow key={index}>
-    //         <TableCell className="font-medium">{dispenser.modelo}</TableCell>
-    //         <TableCell>{dispenser.embalagens}</TableCell>
-    //         <TableCell className="text-right">{dispenser.observacoes}</TableCell>
-    //       </TableRow>
-    //         ))}
-    //     </TableBody>
-    //   </Table>
     );
 }
 
 function App() {
     const [dispensers, setDispensers] = useState([]);
 
-    function adicionarDispenser(novoDispenser) {
-        setDispensers(dispensers.concat(novoDispenser));
+    function adicionarDispenser(dispenser) {
+        setDispensers(dispensers.concat(dispenser));
     }
-    
-    
 
     return (
     <body>
