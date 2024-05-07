@@ -89,7 +89,7 @@ function Header() {
                         </DropdownMenuContent>
                         )}
                     </DropdownMenu>
-                <Link to="/perfil">
+                <Link to="/perfil_usuarios">
                     <img src='/perfil.png' alt='Perfil' />
                 </Link>
             </div>
