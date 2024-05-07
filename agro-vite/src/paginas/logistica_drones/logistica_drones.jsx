@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import './logistica_drones.css';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
 
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
+  
+
 function CadastroDrone(props) {
     const [nome, setNome] = useState('');
     const [serie, setSerie] = useState('');
@@ -66,14 +76,36 @@ function CadastroDrone(props) {
 
 function ListaDrones(props) {
     return (
-        <div className="lista_container">
-            <h2>Drones Cadastrados</h2>
-            <ul>
-            {props.drones.map((drone, index) => (
-                <li key={index}>{`Nome: ${drone.nome}, Série: ${drone.serie}, Modelo: ${drone.modelo}, Horas: ${drone.horas}, Observações: ${drone.observacoes}`}</li>
+        // <div className="lista_container">
+        //     <h2>Drones Cadastrados</h2>
+        //     <ul>
+        //     {props.drones.map((drone, index) => (
+        //         <li key={index}>{`Nome: ${drone.nome}, Série: ${drone.serie}, Modelo: ${drone.modelo}, Horas: ${drone.horas}, Observações: ${drone.observacoes}`}</li>
+        //     ))}
+        //     </ul>
+        // </div>
+        <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">Nome</TableHead>
+            <TableHead>Série</TableHead>
+            <TableHead>Modelo</TableHead>
+            <TableHead>Horas</TableHead>
+            <TableHead className="text-right">Observações</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+        {props.drones.map((drone, index) => (
+          <TableRow key={index}>
+            <TableCell className="font-medium">{drone.nome}</TableCell>
+            <TableCell>{drone.serie}</TableCell>
+            <TableCell>{drone.modelo}</TableCell>
+            <TableCell>{drone.horas}</TableCell>
+            <TableCell className="text-right">{drone.observacoes}</TableCell>
+          </TableRow>
             ))}
-            </ul>
-        </div>
+        </TableBody>
+      </Table>
     );
 }
 
@@ -89,7 +121,7 @@ function App() {
         <NavegacaoLogistica />
         <main className="App drone-page">
             <CadastroDrone onCadastro={adicionarDrone} />
-            <hr></hr>
+            <div class="linha-vertical"></div>
             <ListaDrones drones={drones} />
         </main>
     </body>

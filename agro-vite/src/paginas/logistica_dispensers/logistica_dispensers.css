@@ -54,3 +54,7 @@ li {
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.linha-vertical {
+  border-left: 1px solid black; /* ou border-right para linha à direita */
+  height: 80%; /* altura desejada da linha */
+}
