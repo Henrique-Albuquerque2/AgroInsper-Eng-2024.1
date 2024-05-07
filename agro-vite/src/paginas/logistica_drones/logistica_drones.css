@@ -1,10 +1,4 @@
 /* logistica_drones.css*/
-main {
-  display: flex;
-  flex-direction: row;
-  margin: 3%;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -56,4 +50,12 @@ li {
 .linha-vertical {
   border-left: 1px solid black; /* ou border-right para linha à direita */
   height: 80%; /* altura desejada da linha */
+}
+.lista_conteiner_drones {
+  display: flex;
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: hidden;
 }
