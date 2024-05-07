@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import './logistica_baterias.css';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
 
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
+  
 function CadastroBateria(props) {
     const [serie, setSerie] = useState('');
     const [modelo, setModelo] = useState('');
@@ -57,14 +66,27 @@ function CadastroBateria(props) {
 
 function ListaBaterias(props) {
     return (
-        <div className="lista_container">
-            <h2>Baterias Cadastradas</h2>
-            <ul>
-            {props.baterias.map((bateria, index) => (
-                <li key={index}>{`Série: ${bateria.serie}, Modelo: ${bateria.modelo}, Ciclos: ${bateria.ciclos}, Observações: ${bateria.observacoes}`}</li>
+
+        <Table className= "lista_container_bat">
+        <TableHeader>
+            <TableRow>
+            <TableHead className="w-[100px]">Série</TableHead>
+            <TableHead>Modelo</TableHead>
+            <TableHead>Ciclos</TableHead>
+            <TableHead className="text-right">Observações</TableHead>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+        {props.baterias.map((bateria, index) => (
+            <TableRow key={index}>
+            <TableCell className="font-medium">{bateria.serie}</TableCell>
+            <TableCell>{bateria.modelo}</TableCell>
+            <TableCell>{bateria.ciclos}</TableCell>
+            <TableCell className="text-right">{bateria.observacoes}</TableCell>
+            </TableRow>
             ))}
-            </ul>
-        </div>
+        </TableBody>
+        </Table>
     );
 }
 
@@ -80,7 +102,7 @@ function App() {
         <NavegacaoLogistica />
         <main className="App bateria-page">
             <CadastroBateria onCadastro={adicionarBateria} />
-            <hr></hr>
+            <div class="linha-vertical"></div>
             <ListaBaterias baterias={baterias} />
         </main>
     </body>

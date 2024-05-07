@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import './logistica_dispensers.css';
 import NavegacaoLogistica from '../../components/navegacao_logistica/navegacao_logistica';
+// import {
+//     Table,
+//     TableBody,
+//     TableCell,
+//     TableHead,
+//     TableHeader,
+//     TableRow,
+//   } from "@/components/ui/table"
+  
 
 function CadastroDispenser(props) {
     const [modelo, setModelo] = useState('');
@@ -46,6 +55,7 @@ function CadastroDispenser(props) {
     );
 }
 
+
 function ListaDispensers(props) {
     return (
         <div className="lista_container">
@@ -56,6 +66,24 @@ function ListaDispensers(props) {
             ))}
             </ul>
         </div>
+    //     <Table>
+    //     <TableHeader>
+    //       <TableRow>
+    //         <TableHead className="w-[100px]">Modelo</TableHead>
+    //         <TableHead>Embalagens</TableHead>
+    //         <TableHead className="text-right">Observações</TableHead>
+    //       </TableRow>
+    //     </TableHeader>
+    //     <TableBody>
+    //     {props.dispenser.map((dispenser, index) => (
+    //       <TableRow key={index}>
+    //         <TableCell className="font-medium">{dispenser.modelo}</TableCell>
+    //         <TableCell>{dispenser.embalagens}</TableCell>
+    //         <TableCell className="text-right">{dispenser.observacoes}</TableCell>
+    //       </TableRow>
+    //         ))}
+    //     </TableBody>
+    //   </Table>
     );
 }
 
@@ -63,8 +91,9 @@ function App() {
     const [dispensers, setDispensers] = useState([]);
 
     function adicionarDispenser(novoDispenser) {
-        setDispensers([...dispensers, novoDispenser]);
+        setDispensers(dispensers.concat(novoDispenser));
     }
+    
     
 
     return (
@@ -72,7 +101,7 @@ function App() {
         <NavegacaoLogistica />
         <main className="App dispenser-page">
             <CadastroDispenser onCadastro={adicionarDispenser} />
-            <hr></hr>
+            <div class="linha-vertical"></div>
             <ListaDispensers dispensers={dispensers} />
         </main>
     </body>
