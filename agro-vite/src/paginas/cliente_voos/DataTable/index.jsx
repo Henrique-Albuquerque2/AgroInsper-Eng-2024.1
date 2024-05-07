@@ -1,4 +1,5 @@
 import React from 'react';
+
 const data = [
   { fazenda: 'Fazenda Monte Alegre', identificacao: '838088', data: '08-06-2023', validacao: true },
   { fazenda: 'Fazenda Sol Nascente', identificacao: '413980', data: '28-03-2024', validacao: true },
@@ -28,9 +29,7 @@ const data = [
   // Repita esse padrão para adicionar mais registros conforme necessário
 ];
 
-function DataTable({ filters }) {
-  
-
+function DataTable({ filters, onItemClick }) {
   const filteredData = data.filter(item => (
     (filters.fazenda ? item.fazenda === filters.fazenda : true) &&
     (filters.identificacao ? item.identificacao === filters.identificacao : true) &&
@@ -50,7 +49,7 @@ function DataTable({ filters }) {
       </thead>
       <tbody>
         {filteredData.map((item, index) => (
-          <tr key={index}>
+          <tr key={index} onClick={() => onItemClick(item)}>
             <td>{item.fazenda}</td>
             <td>{item.identificacao}</td>
             <td>{item.data}</td>

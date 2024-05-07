@@ -1,8 +1,19 @@
 import React, { useState, useMemo } from 'react';
 import { DataTable, data } from './DataTable';
 import './cliente_voos.css';
+import InformationPanel from './InformationPanel/InformationPanel';
 
 function Voos() {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  const handleClose = () => {
+    setSelectedItem(null);
+  };
+
   const [filters, setFilters] = useState({
     fazenda: '',
     identificacao: '',
@@ -52,7 +63,8 @@ function Voos() {
             </label>
         </div>
 
-        <DataTable filters={filters} />
+        <DataTable filters={{filters}} onItemClick={handleItemClick} />
+        {selectedItem && <InformationPanel item={selectedItem} onClose={handleClose} />}
       
     </div>
   );

@@ -9,13 +9,13 @@
 .filters {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
+    justify-content: space-around;
+    height: 60%;
     font-size: 4vh;
     padding-left: 15vh;
     padding-right: 10vh;
-    background: linear-gradient(to top, black, #747474);
-    color: #ADC737;
+    /* background: linear-gradient(to top, black, #747474); */
+    /* color: #ADC737; */
 }
 
 table {
@@ -38,5 +38,7 @@ table thead{
 }
 
 label {
-    align-self: flex-start;
+    border-bottom: #ADC737 .1rem solid;
+    text-align: start;
+    width: 100%;
 }
