@@ -23,5 +23,53 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Ajuste o número 3 conforme o número de colunas desejado */
     gap: 2%; /* Espaço entre as colunas */
-    
 }
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    min-width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+    overflow: auto;
+    justify-content: center;
+    }
+
+@media (max-width: 768px) {
+    .dialog-content {
+        min-width: 90%; /* Torna o dialog mais largo em telas menores */
+    }
+}
+
+.btfim{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-left: 35%; */
+    width: 30%;
+}
+.fechar{
+    margin-top: 1%;
+}
+.cadastro_conjunto-formulario h3 {
+    font-size: 1.5rem;
+}
+
+.cadastro_conjunto-formulario input{
+    margin-top: 10%;
+}
+
+.botao_fim{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+
+
+

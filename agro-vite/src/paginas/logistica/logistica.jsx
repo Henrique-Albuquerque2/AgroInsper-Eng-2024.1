@@ -90,9 +90,10 @@ function Logistica() {
             </div>
             <Dialog isOpen={isConjuntoDialogOpen} className="cadastro_conjunto">
                 <DialogTrigger className="cadastro_conjunto-trigger" onClick={openConjuntoDialog}>Cadastrar Conjunto</DialogTrigger>
-                <DialogContent>
+                <DialogContent className = "dialog-content">
                     <DialogTitle>Cadastrar Novo Conjunto</DialogTitle>
                     <form className='cadastro_conjunto-formulario' onSubmit={handleSubmit}>
+                        
                         <div className="section_drones">
                             <h3>Drone</h3>
                             <input type="text" placeholder="Nome Fantasia" value={drone.nome} onChange={(e) => setDrone({ ...drone, nome: e.target.value })} required />
@@ -123,9 +124,11 @@ function Logistica() {
                             <input type="text" placeholder="Área total levantada [ha]" value={operador.areaLevantada} onChange={(e) => setOperador({ ...operador, areaLevantada: e.target.value })} required />
                             <input type="text" placeholder="Nº de Voos" value={operador.voos} onChange={(e) => setOperador({ ...operador, voos: e.target.value })} required />
                         </div>
-                        <button type="submit">Enviar</button>
                     </form>
-                    <button onClick={closeConjuntoDialog}>Fechar</button>
+                    <div className="botao_fim">
+                    <button className= "btfim"  type="submit">Enviar</button>
+                    <button className= "btfim fechar"  onClick={closeConjuntoDialog}>Fechar</button>
+                    </div>
                 </DialogContent>
             </Dialog>
         </div>
