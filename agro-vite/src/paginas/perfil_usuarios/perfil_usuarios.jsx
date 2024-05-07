@@ -7,16 +7,15 @@ function PerfilUsuarios() {
     return (
         <div>
             <NavegacaoPerfil />
-            <div className="border rounded-lg p-6 max-w-4xl mx-auto">
+            <div className="margin_usuarios">
                 {/* Seção Usuários */}
-                <div className="mb-8">
-                    <h2 className="text-xl font-bold mb-4">Usuários</h2>
                     <Table>
                         <TableHeader>
                             <TableHead>Nome</TableHead>
                             <TableHead>Email</TableHead>
                             <TableHead>Empresa</TableHead>
                             <TableHead>CPF</TableHead>
+                            <TableHead>Cargo</TableHead> {/* New header for roles */}
                         </TableHeader>
                         <TableBody>
                             {Array.from({ length: 10 }).map((_, i) => (
@@ -25,11 +24,19 @@ function PerfilUsuarios() {
                                     <TableCell>email{i}@gmail.com</TableCell>
                                     <TableCell>Empresa{i}</TableCell>
                                     <TableCell>CPF{i}</TableCell>
+                                    <TableCell>
+                                        <select className="form-select">
+                                            <option value="admin">Admin</option>
+                                            <option value="manager">Gerente</option>
+                                            <option value="pilot">Piloto</option>
+                                            <option value="client">Cliente</option>
+                                            <option value="observer">Observador</option>
+                                        </select>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
                     </Table>
-                </div>
             </div>
         </div>
     )

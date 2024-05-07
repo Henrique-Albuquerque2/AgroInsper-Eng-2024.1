@@ -6,24 +6,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, PlusCircle } from 'lucide-react';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
 
 function PerfilEmpresas() {
     return (
         <div>
             <NavegacaoPerfil />
             <div className="margin">
-                <h1 className="title">Empresas</h1>
+                {/* Seção Empresas */}
                 <form className="form-search">
                     <Input name="nomeEmpresa" placeholder="Nome da Empresa" className="w-auto"/>
                     <Button type="submit" variant="link">
                         <Search className="w-4 h-4 mr-2"/> {/* Ícone de Lupa */}
                         Filtrar
                     </Button> {/* Botão de Busca */}
-                </form>
-
-                {/* Seção Empresas */}
-                <div>
                     <div className="button">
                         <Dialog>
                             <DialogTrigger asChild>
@@ -37,9 +32,8 @@ function PerfilEmpresas() {
                                     <DialogTitle>Nova Empresa</DialogTitle>
                                     <DialogDescription>Cadastrar nova empresa</DialogDescription>
                                 </DialogHeader>
-                                <form action="space-y-6">
+                                <form action="button-empresa">
                                     <div className="flex flex-col gap-6">
-                                        <Label>Empresa</Label>
                                         <Input className="col-span-3" placeholder="Nome da Empresa"/>
                                         <Input className="col-span-3" placeholder="CNPJ"/>
                                         <Input className="col-span-3" placeholder="Ações"/>
@@ -52,6 +46,7 @@ function PerfilEmpresas() {
                             </DialogContent>
                         </Dialog>
                     </div>
+                </form>
                     <Table>
                         <TableHeader>
                             <TableHead>Empresa</TableHead>
@@ -68,7 +63,6 @@ function PerfilEmpresas() {
                             ))}
                         </TableBody>
                     </Table>
-                </div>
             </div>
         </div>
     );
