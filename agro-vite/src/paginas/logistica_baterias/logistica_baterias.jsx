@@ -66,27 +66,28 @@ function CadastroBateria(props) {
 
 function ListaBaterias(props) {
     return (
-
-        <Table className= "lista_container_bat">
-        <TableHeader>
-            <TableRow>
-            <TableHead className="w-[100px]">Série</TableHead>
-            <TableHead>Modelo</TableHead>
-            <TableHead>Ciclos</TableHead>
-            <TableHead className="text-right">Observações</TableHead>
-            </TableRow>
-        </TableHeader>
-        <TableBody>
-        {props.baterias.map((bateria, index) => (
-            <TableRow key={index}>
-            <TableCell className="font-medium">{bateria.serie}</TableCell>
-            <TableCell>{bateria.modelo}</TableCell>
-            <TableCell>{bateria.ciclos}</TableCell>
-            <TableCell className="text-right">{bateria.observacoes}</TableCell>
-            </TableRow>
-            ))}
-        </TableBody>
-        </Table>
+        <div className="lista_container_bat">
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                    <TableHead className="w-[100px]">Série</TableHead>
+                    <TableHead>Modelo</TableHead>
+                    <TableHead>Ciclos</TableHead>
+                    <TableHead className="text-right">Observações</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                {props.baterias.map((bateria, index) => (
+                    <TableRow key={index}>
+                    <TableCell className="font-medium">{bateria.serie}</TableCell>
+                    <TableCell>{bateria.modelo}</TableCell>
+                    <TableCell>{bateria.ciclos}</TableCell>
+                    <TableCell className="text-right">{bateria.observacoes}</TableCell>
+                    </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
     );
 }
 

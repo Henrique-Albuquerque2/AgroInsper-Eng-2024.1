@@ -9,8 +9,8 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-  } from "@/components/ui/table"
-  
+} from "@/components/ui/table"
+
 
 function CadastroDrone(props) {
     const [nome, setNome] = useState('');
@@ -35,7 +35,7 @@ function CadastroDrone(props) {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Nome Fantasia"
+                    placeholder="Nome do Drone"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
                     required
@@ -84,28 +84,30 @@ function ListaDrones(props) {
         //     ))}
         //     </ul>
         // </div>
-        <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">Nome</TableHead>
-            <TableHead>Série</TableHead>
-            <TableHead>Modelo</TableHead>
-            <TableHead>Horas</TableHead>
-            <TableHead className="text-right">Observações</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-        {props.drones.map((drone, index) => (
-          <TableRow key={index}>
-            <TableCell className="font-medium">{drone.nome}</TableCell>
-            <TableCell>{drone.serie}</TableCell>
-            <TableCell>{drone.modelo}</TableCell>
-            <TableCell>{drone.horas}</TableCell>
-            <TableCell className="text-right">{drone.observacoes}</TableCell>
-          </TableRow>
-            ))}
-        </TableBody>
-      </Table>
+        <div className="lista_container_drones">
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[100px]">Nome</TableHead>
+                        <TableHead>Série</TableHead>
+                        <TableHead>Modelo</TableHead>
+                        <TableHead>Horas</TableHead>
+                        <TableHead className="text-right">Observações</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                {props.drones.map((drone, index) => (
+                    <TableRow key={index}>
+                        <TableCell className="font-medium">{drone.nome}</TableCell>
+                        <TableCell>{drone.serie}</TableCell>
+                        <TableCell>{drone.modelo}</TableCell>
+                        <TableCell>{drone.horas}</TableCell>
+                        <TableCell className="text-right">{drone.observacoes}</TableCell>
+                    </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
     );
 }
 
