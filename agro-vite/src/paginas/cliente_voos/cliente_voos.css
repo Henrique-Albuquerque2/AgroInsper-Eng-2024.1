@@ -1,23 +1,42 @@
 .Main {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    /* height: 88vh; */
+    justify-content: space-between;
+    height: 88vh;
 }
+
 
 .filters {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 60vh;
+    justify-content: center;
+    height: 100%;
+    font-size: 4vh;
+    padding-left: 15vh;
+    padding-right: 10vh;
+    background: linear-gradient(to top, black, #747474);
+    color: #ADC737;
 }
 
 table {
-    width: 70vh;
-    max-height: 70vh;
-    overflow-y: auto;
+    margin-right: 10vh;
+    width: 100vh;
+    height: fit-content;
+    max-height: 50vh; 
+    overflow: auto;
+}
+
+select {
+    border-bottom: #ADC737 .1rem solid;
+    margin-bottom: 10vh;
+    background-color: transparent;
 }
 
 table thead{
-    color: darkgreen;
+    color: #00383D;
+    background-color: #ADC737;
+}
+
+label {
+    align-self: flex-start;
 }
