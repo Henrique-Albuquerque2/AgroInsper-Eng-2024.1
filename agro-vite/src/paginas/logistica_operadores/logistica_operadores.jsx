@@ -37,7 +37,7 @@ function LogisticaOperadores() {
     return (
         <div className="logistica_operadores_container">
             <NavegacaoLogistica />
-            <Table>
+            <Table className= 'tabela_operadores'>
                 <TableHeader>
                     <TableRow>
                         <TableHead>Nome</TableHead>

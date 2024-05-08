@@ -29,6 +29,7 @@
 }
 
 .info-panel-actions button {
+    font-size: small;
     display: flex;
     flex-direction: column;
     padding: 8px 16px;
