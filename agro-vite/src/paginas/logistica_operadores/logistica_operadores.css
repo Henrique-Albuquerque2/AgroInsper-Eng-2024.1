@@ -1,7 +1,5 @@
 /* Estilização para os cabeçalhos da tabela */
-table {
-  margin-top: 2rem;
-}
+
 
 th {
   text-align: left;
@@ -15,4 +13,8 @@ td {
   text-align: left;
   padding: 0.5rem;  
   border-bottom: 1px solid #ddd;  /* Linha de separação entre as linhas */
+}
+.tabela_operadores{
+  margin: 3% 1%;
+  max-width: 98%;
 }
