@@ -117,7 +117,7 @@ main {
     bottom: 0;
     width: 40%; /* Ajuste a largura conforme necessário */
     height: 100%; /* Ajuste a altura conforme necessário */
-    background: linear-gradient(to top, black, #747474);
+    background: linear-gradient(to top, black 10%, #8b8a8a);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,6 +131,7 @@ main {
     font-size: 1.8rem; 
     margin-top: 0;
     color: #00383D;
+    font-weight: bold;
 }
 
 .trapezoid p {
@@ -138,7 +139,7 @@ main {
     max-width: 60%;
     margin: .5em;
     margin-top: 0;
-    font-size: 3.5em;
+    font-size: 3.3em;
     text-align: end;
 }
 
